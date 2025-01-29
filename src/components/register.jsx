@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Service from '../api/service'
+import {register} from '../api/service'
 import '../style/login.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await Service.register({name, email, password });
+      const response = await register({name, email, password });
       console.log(response); 
       if(response.data) {
         navigate('/')

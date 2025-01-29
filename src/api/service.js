@@ -21,4 +21,4 @@ const register = ($data)=>{
     return response
 }
 
-export default {login, register}
+export {login, register}

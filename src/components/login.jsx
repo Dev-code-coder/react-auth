@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Service from '../api/service'
+import {login} from '../api/service'
 import '../style/login.css'
 import { useNavigate } from 'react-router-dom';
 
@@ -11,7 +11,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await Service.login({ email, password });
+      const response = await login({ email, password });
       localStorage.setItem('token', response.data.token);
     } catch (error) {
       alert('Login failed');
